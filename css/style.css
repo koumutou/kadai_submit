@@ -9,10 +9,14 @@ body{
     font-size: 1.6rem;
     font-family: "Open Sans", "ヒラギノ角ゴ ProN W3";
     width: 1200px;
+    margin: auto;
 }
 
 
-/* headerについてのCSS */
+
+/* じゃんけんゲームのCSS */
+
+
 .wrapper{
     max-width: 1200px;
     margin: auto;
@@ -20,398 +24,98 @@ body{
 
 .header-wrapper{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 121px;
+    align-items:baseline;
+    margin: 0 50px 20px 20px;
+ }
+
+.gonsan-logo{
+    height: 125px;
+    width: 200px;
+    
 }
 
-.header-logo{
-    margin: 0 0 0 20px;
+.last_words{
+    margin: 0 0 0 5px;
+    font-size: 8px;
+    color: #707070;
+
 }
+
+.heading{
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+    color: #707070;
+    margin: 40px 0;
+    background:rgba(0, 0, 0, 0) linear-gradient(transparent 40%, #ffffbc 0%) repeat scroll 0 0;
+
+}
+
+.text_color{
+    color: #707070;
+    font-weight: bold;
+    text-align: center;
+}
+
 img{
     max-width: 100%;
     height: auto;
 }
 
-.nav-list{
+.title_call{
+    margin-top: 40px;
+    text-align: center;
+    margin-bottom: 8px;
+    color: red;
+}
+
+.your_choice{
     display: flex;
+    margin-bottom: 100px;
 }
 
-.nav-item{
-    margin: 0 0 0 50px;
-    font-size: 2.1rem;
+.each_hand{
+    width:400px;
+    height: 200px;
 }
 
-.nav-item>a{
-    color:#000;
-    text-decoration: none;
-}
-/* ここからメインビジュアルについてのCSS */
-
-.main-visual{
-    position: relative;
+.btn_choice{
+    background-color: #fff;
+    border-style: none;
 }
 
-.title-wrapper{
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate3d(-50%, -50%, 0);
-    letter-spacing: 0.1em;
-    width: 1200px;
+.CPU_choice{
+    width: 310px;
+    margin: 200px auto;
+    height: 200px;
+
 }
 
-.main-title{
-    font-size: 4rem;
-    font-weight: bold;
-    color: #ffffff;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.sub-title{
-    font-size: 3rem;
-    color: #ffffff;
+.text_center{
     text-align: center;
 }
 
-
-
-
-/* ここからaboutについてのCSS */
-
-.overview{
-    padding: 60px 0;
-}
-
-.about-cheese{
-    font-size: 1.8rem;
-    margin:0 0 60px;
-}
-
-.text-center{
-    text-align: center;
-    line-height: 1.5;
-}
-.overview-title{
-    margin:0 0 30px;
-    font-size: 2.4rem;
-    font-weight: bold;
-    color:#ffd61a;
-
-}
-.sentense-margin40{
-    margin:0 0 40px;
-}
-
-.sentense-margin80{
-    margin:0 0 80px;
-}
-
-.about-list{
-    display: flex;
-}
-.about-item{
-    width: 25%;
-}
-
-/* ここからcourseについてのCSS */
-
-
-
-.guidance-title{
-    margin:0 0 30px;
-    font-size: 2.4rem;
-    font-weight: bold;
-}
-.each-course{
-    padding: 60px 0;
-}
-
-.course-list-wrapper{
-    background-color: #fafafa;
-}
-
-.course-list-parent{
-    position: relative;
-    width: 50%;
+.margin40{
+    margin-bottom: 20px;
+    background-color: black;
+    color: #fff;
+    padding:8px
     
 }
 
-.course-list-child{
-    position: absolute;
-    top:50%;
-    transform: translate3d(115%, -50%, 0);
-    letter-spacing: 0.1em;
-    padding: 120px 0 120px 50px;
-    text-align: left;
-}
-
-.course-heading{
-    font-size: 2.4rem;
-    font-weight: bold;
-    margin-bottom: 40px;
-    text-align: left;
-    width: 480px;
-}
-
-.course-caption{
-    text-align: left;
-    width: 480px;
-}
-.course-list-parent2{
-    position: relative;
-    width: 50%;
-    height: 400.88px;
-}
-
-.course-list-child2{
-    position: absolute;
-    top:50%;
-    transform: translate3d(100%, -50%, 0);
-    letter-spacing: 0.1em;
-    padding: 120px 0 120px 0;
-    width: 600px;
-    text-align: left;
-}
-.positioning{
-    position: absolute;
-    top:50%;
-    transform: translate3d(20%, -50%, 0);    
-    width: 480px;
-}
-
-/* ここからnewについてのCSS */
-
-
-.news-title{
-    margin:0 0 30px;
-    font-size: 2.4rem;
-    font-weight: bold;
-    color:#ffd61a;
-}
-
-.each-news{
-    padding: 60px 0;
-}
-
-.news-list{
-    display: flex;
-    justify-content: center;
-}
-
-.news-item{
-    width: 300px;
-    margin: 0 30px 30px 0;
-    font-size: 1.4rem;
-}
-
-.news-item:hover{
-    opacity: 0.3;
-}
-
-.date{
-    margin: 30px 0 24px 0;
-    text-align: left;
-}
-.btn-more{
+.result_hand{
     display: block;
-    width: 300px;
-    margin: 0 auto 60px;
-    padding: 21px 0;
-    text-align: center;
-    font-size: 1.8rem;
-    color: r    gb(143, 112, 112);
-    background-color: #ffd61a;
-    text-decoration: none;
-    color: #ffffff;
+    padding-bottom: 8px;
 }
-.btn-more:hover{
-    opacity: 0.3;
-}
-
-/* ここからaccessについてのCSS */
-.access-wrapper{
-    text-align: center;
-    margin: auto;
-    padding: 60px 0;
-    background-color: #fafafa;
-}
-
-.access-title{
-    font-size: 2.4rem;
-    font-weight: bold; 
-}
-
-.sentense-margin30{
-    margin:0 0 30px;
-}
-
-.map-wrapper{
-    padding: 60px 0;
-}
-.map-image{
-    width: 1200px;
-}
-
-.table-row{
-    height: 50px;
-    margin: 13px;
-}
-
-.information-table{
-    margin: auto;
-}
-
-.table-item{
-    text-align: left;
-    width: 150px;
-    white-space: nowrap;
-}
-
-
-/* ここからcontactについてのCSS */
-
-.contact-title{
-    font-size: 2.4rem;
-    font-weight: bold;
-    margin-bottom: 30px;
-}
-
-.sentense1{
-    margin-bottom: 60px;
-}
-.sentense2{
-    margin-bottom: 30px;
-}
-.sentense3{
-    margin-bottom: 70px;
-}
-
-
-.form-wrapper{
-    width: 640px;
-    margin: auto;
-    padding: 60px 0 140px 0;
-}
-
-.contact-form{
-    display: flex;
-    flex-wrap: wrap;
-    width: 640px;
-}
-
-.contact__row{
-    display: table;
-    margin-left: auto;
-    margin-right: auto;
-    border-top: solid 1px #bfbfbf;  
-    padding: 10px 0;
-    width: 640px;
-    height: 36px;
-    line-height: 1.5;
-}
-
-.contact__q{
-    width: 160px;
-    display: table-cell;
-    vertical-align: middle;
-    padding: 0 64px 0 16px;
-    text-align: left;
-}
-
-.contact__a{
-    width: 392px;
-    display: table-cell;
-    vertical-align: middle;
-    padding: 8px 8px 8px 0;
-    font-size: 1.4rem;
-    border-left: solid 1px #bfbfbf;
-}
-
-.contact__a-checkbox{
-    display: block;
-    margin: 0 0 24px;
-    text-align: left;
-    padding: 0 0 0 30px;
-    font-size: 1.3rem;
-}
-
-.contact__a-checkbox2{
-    display: block;
-    text-align: left;
-    padding: 0 0 0 30px;
-    font-size: 1.3rem;
-}
-
-.contact__formparts1{
-    box-sizing: border-box;
-    width: 328px;
-    height: 36px;
-    margin: 0 0 0 8px;
-    padding: 0 0 0 8px;
-    font-size: 1.4rem;
-    border: solid 1px #c9c9c9;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
-
-.contact__formparts2{
-    box-sizing: border-box;
-    width: 328px;
-    margin: 0 0 0 8px;
-    padding: 8px;
-    font-size: 1.4rem;
-    border: solid 1px #c9c9c9;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
-
-input[type*="checkbox"]{
-    margin: 0 20px 0 8px;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    border: solid 1px #a0a0a0;
-    width: 16px;
-    height: 16px;
-    border-radius: 20%;
-    vertical-align: -2px;
-}
-
-input[type*="checkbox"]:checked{
-    background-color: #a0a0a0;
-}
-
-.contact__test{
-    border-right: black;
-}
-
-
-.btn-submit{
-    display: block;
-    width: 300px;
-    margin: 0 auto 60px;
-    padding: 21px 0;
-    text-align: center;
-    font-size: 1.8rem;
-    color: r    gb(143, 112, 112);
-    background-color: #ffd61a;
-    text-decoration: none;
-    color: #ffffff;
-    border-style: none;
-    margin-top: 30px;
-}
-/* ここからfooterについてCSS */
 
 .footer{
     background-color: #707070;
     padding: 30px 0;
+    margin-top: 60px;
 }
 
 .copyrights{
     text-align: center;
     color: #ffffff;
 }
+
