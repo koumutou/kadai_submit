@@ -4,109 +4,108 @@ html{
     font-size: 62.5%;
 }
 
-body{
-    color: #222222;
-    font-size: 1.6rem;
-    font-family: "Open Sans", "ヒラギノ角ゴ ProN W3";
-    width: 1200px;
-    margin: auto;
-}
+body {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-size: 32px;
+    width: 100%;
+  }
 
-
-
-/* じゃんけんゲームのCSS */
-
-
-.wrapper{
-    max-width: 1200px;
-    margin: auto;
-}
-
-.header-wrapper{
-    display: flex;
-    align-items:baseline;
-    margin: 0 50px 20px 20px;
- }
-
-.gonsan-logo{
-    height: 125px;
-    width: 200px;
-    
-}
-
-.last_words{
-    margin: 0 0 0 5px;
-    font-size: 8px;
-    color: #707070;
-
-}
-
-.heading{
-    font-weight: bold;
-    font-size: 40px;
-    text-align: center;
-    color: #707070;
-    margin: 40px 0;
-    background:rgba(0, 0, 0, 0) linear-gradient(transparent 40%, #ffffbc 0%) repeat scroll 0 0;
-
-}
-
-.text_color{
-    color: #707070;
-    font-weight: bold;
-    text-align: center;
-}
-
-img{
-    max-width: 100%;
-    height: auto;
-}
-
-.title_call{
-    margin-top: 40px;
-    text-align: center;
-    margin-bottom: 8px;
-    color: red;
-}
-
-.your_choice{
-    display: flex;
-    margin-bottom: 100px;
-}
-
-.each_hand{
-    width:400px;
-    height: 200px;
-}
-
-.btn_choice{
+  header {
     background-color: #fff;
-    border-style: none;
-}
-
-.CPU_choice{
-    width: 310px;
-    margin: 200px auto;
-    height: 200px;
-
-}
-
-.text_center{
+    border-bottom: 1px solid #ccc;
     text-align: center;
-}
+  }
 
-.margin40{
-    margin-bottom: 20px;
-    background-color: black;
-    color: #fff;
-    padding:8px
-    
-}
+  h1 {
+    font-size: 100%;
+  }
 
-.result_hand{
+  main {
+    width: 100%;
     display: block;
-    padding-bottom: 8px;
-}
+    border-bottom: 1px solid #ccc;
+    position: relative;
+  }
+
+
+  p {
+    font-size: 200%;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+    height: 200px;
+  }
+
+  ul {
+    padding: 0;
+    border-top: 1px solid #000000;
+    display: table; /* 定義 */
+    table-layout: fixed;
+    width: 96%;
+    font-size: 80%;
+    margin: 0 3%;
+    text-align: center;
+  }
+
+  li {
+    list-style-type: none;
+    border: 1px solid #666;
+    background-color: #fff;
+    display: table-cell; /* 定義 */
+    cursor: pointer;
+    color: #0d7dfd;
+  }
+
+  li:hover {
+    background: #0d7dfd;
+    color: #fff;
+  }
+
+  textarea {
+    margin: 10px 3%;
+    width: 95%;
+    height: 100px;
+    font-size: 80%;
+    box-shadow: 3px 3px 3px 3px #555;
+    background-color: rgb(241, 239, 239);
+  }
+
+  #key {
+    margin: 0 3%;
+    width: 95%;
+    font-size: 80%;
+    background-color: #e1efff;
+    box-shadow: 3px 3px 3px 3px #555;
+  }
+
+  table {
+    margin: 20px 3%;
+    border: 1px solid #8dc3f5;
+    width: 96%;
+  }
+  th {
+    width: 30%;
+    font-size: 24px;
+    background-color: #d0e7fc;
+    border-bottom: 1px solid #8dc3f5;
+  }
+
+  td {
+    font-size: 16px;
+    background-color: rgb(241, 239, 239);
+    border-bottom: 1px solid #8dc3f5;
+  }
+  
+  input {
+    margin: 10px 3%;
+    width: 95%;
+    height: 40px;
+    font-size: 80%;
+  }
+  
+
+
 
 .footer{
     background-color: #707070;
