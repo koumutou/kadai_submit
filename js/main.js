@@ -1,76 +1,80 @@
-
-/* 入力項目をテーブルへ転記 */
-
-$("#save").on("click", function(){
-    let statusselect = document.getElementById("status");
-    let statusoption = statusselect.selectedIndex;
-    let statustext = statusselect.options[statusoption].text;
-    localStorage.setItem("status",statustext);
-
-    let todotext = $("#todo").val();
-    localStorage.setItem("todo",todotext);
-
-    let deadlinetext = document.getElementById("deadline").value;
-    localStorage.setItem("deadline",deadlinetext);
-
-    let inchargetext = $("#incharge").val();
-    localStorage.setItem("incharge",inchargetext);
-
-    let nextselect = document.getElementById("nextstep");
-    let nextoption = nextselect.selectedIndex;
-    let nexttext = nextselect.options[nextoption].text;
-    localStorage.setItem("nextstep",nexttext);
-
-    let notetext = $("#note").val();
-    localStorage.setItem("note",notetext);
-
-    // let deleteButton = document.createElement('button');
-    // deleteButton.innerHTML = 'Delete';
-    // $("#list").append(deleteButton);
-    // deleteButton.addEventListener('click', evt => {
-    //     evt.preventDefault();
-    //     deleteTasks(deleteButton);
-    // });
-
-    const html = `
-        <tr>
-            <td>${statustext}</td>
-            <td>${todotext}</td>
-            <td>${deadlinetext}</td>
-            <td>${inchargetext}</td>
-            <td>${nexttext}</td>
-            <td>${notetext}</td>
-        </tr>
-        `;
+if (!localStorage.getItem("data")) {
+    localStorage.setItem("data", JSON.stringify([]));
+  }
+  
+  function buildHtml({
+    key,
+    statusText,
+    todoText,
+    deadlineText,
+    inchargeText,
+    nextText,
+    noteText
+  }) {
+    return `
+      <tr class="listItem">
+      <td class="key">${key}</td>
+      <td>${statusText}</td>
+      <td>${todoText}</td>
+      <td>${deadlineText}</td>
+      <td>${inchargeText}</td>
+      <td>${nextText}</td>
+      <td>${noteText}</td>
+      </tr>
+    `;
+  }
+  
+  
+  function init() {
+    const rawData = localStorage.getItem("data");
+    const data = JSON.parse(rawData);
+    for (let i = 0; i < data.length; i++) {
+      const html = buildHtml(data[i]);
+      $("#list").append(html);
+    }
+  }
+  
+  $("#save").on("click", function(){
+    const data = JSON.parse(localStorage.getItem("data"));
+    const lastKey = 0 < data.length ? data[data.length - 1].key : 0;
+  
+    const item = {
+      key: lastKey + 1,
+      statusText: $("#status").val(),
+      todoText: $("#todo").val(),
+      deadlineText: $("#deadline").val(),
+      inchargeText: $("#incharge").val(),
+      nextText: $("#nextstep").val(),
+      noteText: $("#note").val(),
+    }  
+  
+    localStorage.setItem("data", JSON.stringify([
+      ...data,
+      item,
+    ]));
+  
+    const html = buildHtml(item);
     $("#list").append(html);
-
-    
- 
-    
-});
-
-//*　各項目を削除する */ 
-// $("#delete").on("click",function(){
-//     localStorage.clear();
-//     $("#list").empty();
-// });
-
-
-/*更新時のデータ呼び出し→keyが単品でしか作れず*/ 
-
-for (let i = 0; i < localStorage.length; i++) {
-    let key = localStorage.key(i); 
-    let value = localStorage.getItem(key);
-    const html = `
-            <td>${value}</td>
-        `;
-    $("#list").append(html);
-};
-
-
-/*削除データが一括選択に*/ 
-$("#list").on("click", function () {
-    const key2 = $(this).children('td').text();
-    localStorage.removeItem(key2);
-    $(this).empty();
-      });
+  });
+  
+  $("#list").on("click", 'tr.listItem', function (e) {
+    const key = $(this).find('td.key').text();
+    const data = JSON.parse(localStorage.getItem('data'));
+  
+    $(this).remove();
+  
+    let updated = [];
+    for (let i = 0; i < data.length; i++) {
+      const item = data[i];
+      if (item.key != key) {
+        updated = [
+          ...updated,
+          item
+        ]
+      }
+    }
+  
+    localStorage.setItem('data', JSON.stringify(updated));
+  });
+  
+  init();
