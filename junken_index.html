@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>じゃんけんアプリ</title>
+  <title>工程管理アプリ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -23,44 +23,56 @@
   <!-- ここから下にコードを書く -->
 
  <header>
-    <div class="wrapper header-wrapper">
-        <img src="img/gon-san.png" alt="ヘッダーロゴ" class="gonsan-logo">
-        <p class="last_words">もう　これで　　終わってもいい　...</p>
-    </div>
+   <h1>工程管理表</h1>
+  <main>
+    <table>
+      <tr>
+        <th>Status</th> <th>ToDo</th> <th>DeadLine</th> <th>InCharge</th> <th>NextStep</th> <th>Note</th>
+      </tr>
+      <tr>
+        <td>
+          <form>
+            <select id = "status">
+                <option value = "a">Done</option>
+                <option value = "b">InProgress</option>
+                <option value = "c">NotStarted</option>
+            </select>
+          </form>
+        </td> 
+        <td>
+          <input type="text" id = "todo" placeholder="予定を入力">
+        </td>   
+        <td>
+          <input type = "date" id = "deadline">
+        </td>
+        <td>
+          <input type="text" id = "incharge" placeholder="主担当者">
+        </td> 
+        <td>
+          <form>
+            <select id = "nextstep">
+                <option value = "d">Fixed</option>
+                <option value = "e">TBD</option>
+            </select>
+          </form>
+        </td>
+        <td>
+          <input type="text" id = "note" placeholder="備考">
+        </td>
+      </tr>
 
-    <div>
-      <h1 class="heading">サザエさんじゃんけんゲーム</h1>
-      <p class="text-center text_color">サザエさんとサザエさんがじゃんけんを行います。どちらかのサザエさんになったつもりでご参加ください。</p>
-  </div>
+      <tr>
+        <td colspan="6" id = "save">SAVE</td>
+      </tr>
+    </table>
 
-  </header>
+  </main>
 
-    <p class="text-center title_call">サザエさんの出す手を選んでください。</p>
-    <div class="your_choice">
-      <button onclick = "janken_rock();" class="btn_choice"><img src="img/0.jpg" alt="じゃんけんグー" class="each_hand"></button>
-      <button onclick = "janken_scissors();" class="btn_choice"><img src="img/1.jpg" alt="じゃんけんチー" class="each_hand"></button>
-      <button onclick = "janken_paper();" class="btn_choice"><img src="img/2.jpg" alt="じゃんけんパー" class="each_hand"></button>
-    </div>
-    
+  <table id="list">
+    <td id = "eachlist"></td>
+  <!-- ここに追加データが挿入される -->
+  </table>
 
-  <div class="CPU_choice">
-    <p class="margin40">こちらに相手のじゃんけんの手が出ます</p>
-    <img src="" alt="" id = "CPU_hand" class="result_hand">
-    <p id = "rock_draw" class="text_center"></p>
-    <p id = "scissors_draw" class="text_center"></p>
-    <p id = "paper_draw" class="text_center"></p>
-  </div>
-
-
-
-
-  </section>  
-</main>  
-<footer class="footer">
-  <p class="copyrights">copyrights 2021  The Asahi Shimbun Company All RIghts Reserved.</p>
-</footer>  
-  <!-- ここから上にコードを書く -->
-  <!-- この中に記述していく -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="js/main.js"></script>
 </body>
